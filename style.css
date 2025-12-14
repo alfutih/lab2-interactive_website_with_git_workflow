@@ -1,0 +1,565 @@
+* {
+font-family: "Inter", sans-serif;
+}
+
+
+header{
+    padding: 20px;
+}
+nav ul {
+    list-style: none;
+    font-size: 18px;
+    gap: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: rgb(238, 50, 200);
+}
+
+.my_photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: rgb(238, 50, 200);
+    line-height: 50px;
+    
+    margin: 0 auto;
+    max-width: 90%;
+    
+    
+
+}
+.image_small{
+    display: none;
+    max-width: 90%;
+    margin-bottom: 2em;
+}
+
+.image_big{
+    max-width: 70%;
+    margin-bottom: 3em;
+    
+
+}
+
+
+.under_welcome_text{
+color: #999;
+line-height: 25px;
+margin: 0 auto;
+max-width: 90%;
+text-align: center;
+padding-bottom: 3em;
+
+
+}
+
+h1, h2{
+
+    text-align: center;
+
+
+   
+}
+
+h1{
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+}
+
+h2{
+    font-size: 2rem;
+    line-height: 4rem;
+}
+
+h3{
+    color: #999;
+}
+.skills{
+
+   line-height: 25px;
+    margin: 0 auto;
+    padding-bottom: 3em;
+    max-width: 90%;
+}
+
+.skills ul {
+  max-width: 90%;
+  margin: 0 auto;     /* center horizontally */
+  padding-left: 0;    /* remove default ul indent */
+}
+
+.skills li{
+    margin-bottom: 15px;
+    color: #999;
+    text-align: left;
+}
+
+.skills li strong {
+  color: black;
+}
+
+.education{
+    margin-bottom: 3em;
+    
+    
+}
+.education table {
+
+  border: 1px solid black;
+  border-collapse: collapse;
+    max-width: 90%;
+    margin: 0 auto;
+    
+}
+
+
+.education th,
+.education td {
+  border: 1px solid black;
+  padding: 20px;
+  line-height: 25px;
+  text-align: left;
+  color: #999;
+  vertical-align: top;
+}
+
+.hobbies{
+    list-style: none;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.hobbies li{
+    color: #999;
+}
+.social_media_continer{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center; /* center items horizontily أفقيًاinside a flex container */
+    align-items: center; /*center items vertically عموديًا inside a flex container */
+    gap: 20px;
+}
+
+
+.container1, .container2, .container3, .container4{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 90%;
+    padding-bottom: 80px;
+ }
+
+.describtion{
+    max-width: 50%;
+    text-align: center;
+    line-height: 25px;
+}
+.describtion p{
+    color: #999;
+}
+
+.project {
+    width: 500px;
+    height: 500px;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    transition: all 1s;
+} 
+
+
+.project{
+      transition: all 1s;
+}
+.project:hover{
+    transform: scale(1.04);
+}
+
+
+ #project1{
+    background-image: url(Image/playrent.png) ;
+}
+
+
+#project2{
+    background-image: url(Image/polestar_ui.gif) ;
+}
+
+#project3{
+    background-image: url(Image/touch_and_discover.png) ;
+}
+
+#project4{
+    background-image: url(Image/skraphjaltarna.png) ;
+}
+
+.contact{
+text-align: center;
+padding-top: 50px;
+padding-bottom: 50px;
+align-items: center;
+margin: 0 auto;
+
+
+}
+
+.contact p{
+    color: #999;
+    line-height: 25px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Center the form */
+form {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    color: #999;
+}
+
+/* Style inputs + textarea */
+input, textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.message {
+    height: 300px;
+}
+
+button{
+    color: white;
+    background-color: rgb(238, 50, 200);
+    border-radius: 5px;
+    padding: 10px;
+    
+    
+}
+footer{
+    text-align: center;
+    color: #999;
+}
+
+
+hr{
+    border-color: pink;
+    border-width: 3px;
+    max-width: 200px;
+}
+
+main{
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+@media screen and (max-width: 1300px) {
+    .image_big{
+        display: flex;
+        margin: 0 auto;
+        width: 50%;
+    }
+  
+    .my_photo {
+        display: flex;    
+        text-align: center;
+        margin-bottom: 30px;
+
+        
+        }
+
+    .image_small{
+        display: none;
+
+    }
+    
+    .Welcome{
+        margin: 20px auto;
+        font-size: 2rem;
+        line-height: 3rem;
+
+
+    }
+
+
+    .describtion, .project{
+        margin: 0 auto;
+    }
+    .describtion{
+    max-width: 40%;
+    }
+    
+    .project {
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    } 
+
+h2{
+    font-size: 1.8rem;
+    line-height: 4rem;
+}
+    form {
+    max-width: 600px;
+    margin: 0 auto;
+    }
+} 
+
+
+/* Medium devices (laptops/tablets landscape, <992px) */
+@media screen and (max-width: 992px) {
+
+    .image_big{
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+    }
+  
+    .my_photo {
+        display: block;    
+        text-align: center;
+
+        
+        }
+
+    .image_small{
+        display: none;
+
+    }
+    
+    .Welcome{
+        margin: 20px auto;
+        font-size: 2rem;
+        width: 90%;
+
+
+    }
+
+    h1{
+    font-size: 1.8rem;
+    line-height: 3rem;
+    }
+
+    h2{
+    font-size: 1.6rem;
+    line-height: 4rem;
+    }
+    form {
+    max-width: 400px;
+    margin: 0 auto;
+    } 
+
+
+.describtion, .project{
+        margin: 0 auto;
+    }
+    .describtion{
+    max-width: 40%;
+    }
+    
+    .project {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    } 
+} 
+
+/* Medium devices (576px) */
+@media screen and (max-width: 576px) {
+
+    .image_big{
+        display: none;
+    }
+  
+    .my_photo {
+        display: block;    
+        text-align: center;
+
+        
+        }
+
+    .image_small{
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+
+    }
+    
+    .Welcome{
+        margin: 20px auto;
+        font-size: 1.2rem;
+        width: 90%;
+        line-height: 1.9rem;
+    }
+    form {
+    max-width: 300px;
+    margin: 0 auto;
+    }
+    
+    h1{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    }
+
+    h2{
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+    }
+    .under_welcome_text,
+    .skills, .education, .hobbies, h3, h4, footer, nav ul, p, form{
+        font-size: 0.8rem;
+    }
+
+    .contact{
+    
+    padding-top: 35px;
+    padding-bottom: 35px;
+    }
+
+    .container1, .container2, .container3, .container4{
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: 0 auto;
+    align-items: center;
+
+    }
+
+.describtion, .project{
+        margin: 0 auto;
+    }
+    .describtion{
+    max-width: 90%;
+    }
+    
+    .project {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    } 
+
+.describtion {
+    order: -1;
+}
+
+
+}
+/* @media (max-width: 576px) {
+  header {
+    padding: 10px 16px;
+  }
+
+.image_big{
+        display: none;
+    }
+.image_small{
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 400px;
+        object-fit: cover;
+    }
+
+  nav ul {
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  p, .skills, .education {
+    font-size: 14px;
+  }
+
+  .my_photo {
+    padding: 0 10px;      
+    display: block;       
+    text-align: center;
+    line-height: 1.5;
+    width: 90%;
+  }
+
+
+  .my_photo + p {
+    padding: 0 16px;      
+    text-align: center;
+  }
+
+  .skills {
+    padding: 0 16px;      
+  }
+
+  .education table {
+    margin: 0 16px;       
+    display: block;
+    
+  }
+
+  h1 {
+    padding: 20px 16px 0 16px;
+  }
+.project{
+    font-size: 1.5em;
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+form {
+    width: 250px;
+    margin: 0 auto;
+}
+}
+.body{
+    margin: auto 0;
+}
+
+.box_search{
+    border: 1px solid black;
+    border-radius: 15px;
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    
+justify-content: center;
+}
+
+.first{ 
+font-size: 10em;
+text-align: center; 
+border: 1px black solid; 
+border-radius: 15px;
+background-image: linear-gradient(to bottom right, rgb(3, 232, 248), rgb(0, 255, 132));
+    
+}  */
