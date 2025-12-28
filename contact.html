@@ -40,16 +40,26 @@
     <section>
         <form action="" method="post">
             
-            <label for="name">Name</label>
-            <input id="name" class="name" type="text">
+            <label for="firstName">First Name</label>
+            <input id="firstName" name="firstName" type="text">
+                
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="lastName" type="text">
 
             <label for="email">Email</label>
-            <input id="email" class="email" type="email">
+            <input id="email" name="email" type="email">
+
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phoneNumber" type="tel">
+
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text">
 
             <label for="message">Message</label>
-            <textarea id="message" class="message"></textarea>
+            <textarea id="message" name="message"></textarea>
 
             <button type="submit">Submit</button>
+            <button type="reset">Clear</button>
         </form>
     </section>
 </main>
