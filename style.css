@@ -466,6 +466,9 @@ h2{
     order: -1;
 }
 
+button{
+    padding: 7px;
+}
 
 }
 /* @media (max-width: 576px) {
