@@ -1,3 +1,5 @@
+const form= document.getElementById("contactForm");
+
 const firstName= document.getElementById("firstName");
 
 const lastName= document.getElementById("lastName");
@@ -14,7 +16,19 @@ const submit= document.querySelector(".submitButton");
 
 const clear= document.querySelector(".clearButton");
 
-firstName.addEventListener("click", function(){
+// The problem is when we click submit the browser 
+// sends the form, reloads the page and removes all
+// JS state. To stop the browser from reloading the page so I can validate the 
+// inputs with JS i should use: event.preventDefault();
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+});
+
+/* form.addEventListener("click", function(){
+    console.log("test");
+}) */
+
+/* firstName.addEventListener("click", function(){
     console.log("test");
 })
 
@@ -44,4 +58,4 @@ submit.addEventListener("click", function(){
 
 clear.addEventListener("click", function(){
     console.log("test");
-})
+}) */
