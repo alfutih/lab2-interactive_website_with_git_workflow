@@ -18,8 +18,8 @@ const clear= document.querySelector(".clearButton");
 
 
 //Validation functions for name and message.
-function isNotEmpty (inputs){
-    return inputs.value.trim().length > 0;
+function isNotEmpty (input){
+    return input.value.trim().length > 0;
 }
 
 function validateMessage(message){
@@ -52,3 +52,28 @@ form.addEventListener("submit", function(event){
     }
 
 });
+
+//Create function for show error.
+
+function showError(input, message){
+    //select the <p> under the input by useing nextElementSibling.
+   const errorP = input.nextElementSibling;
+   // put text in it
+   errorP.textContent = message;
+   // Now we show it (CSS transition will work because of .show):
+   errorP.classList.add("show");
+   // Now we add red border class to input:
+   input.classList.add("input-error");
+}
+
+// Create function for clear error
+function clearError(input){
+    // select the <p> under the input
+    const errorP = input.nextElementSibling;
+    // remove the text from it
+    errorP.textContent = "";
+    // Hide it:
+    errorP.classList.remove("show");
+    //remove red border
+    input.classList.remove("input-error");
+}

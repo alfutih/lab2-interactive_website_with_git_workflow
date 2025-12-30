@@ -44,10 +44,12 @@
             <input id="firstName" name="firstName" type="text" required 
             pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+"
             title="First name must contain only letters">
+            <p class="error-message"></p>
                 
             <label for="lastName">Last Name</label>
             <input id="lastName" name="lastName" type="text" required
             pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" title="First name must contain only letters">
+            <p class="error-message"></p>
 
             <label for="email">Email</label>
             <input id="email" name="email" type="email" required>
@@ -69,6 +71,7 @@
 
             <label for="message">Message</label>
             <textarea id="message" name="message" minlength="20" required></textarea>
+            <p class="error-message"></p>
 
             <button type="submit" class="submitButton">Submit</button>
             <button type="reset" class="clearButton">Clear</button>
