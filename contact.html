@@ -61,16 +61,14 @@
             pattern="^\+?[0-9]+$"
             title="Use numbers only, optionally starting with +">
 
-            <label class="option_field">Subject
+            <label class="option_field">Subject</label>
                 <select id="subject" name="subject" required>
                     <option value="" disabled selected>--Please choose a subject--</option>
                     <option value="general">General Contact</option>
                     <option value="collaboration">Collaboration</option>
                     <option value="feedback">Feedback</option>
                 </select>
-                
                 <p class="error-message"></p>
-            </label>
 
             <label for="message">Message</label>
             <textarea id="message" name="message" minlength="20" required></textarea>
