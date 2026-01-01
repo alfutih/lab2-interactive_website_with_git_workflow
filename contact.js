@@ -34,9 +34,9 @@ function showError(input, message){
    const errorP = input.nextElementSibling;
    // put text in it
    errorP.textContent = message;
-   // Now we show it (CSS transition will work because of .show):
+   // Now we add class call "show" in order to be contraled on css.
    errorP.classList.add("show");
-   // Now we add red border class to input:
+   // Now we add red border class to input call "input-error" :
    input.classList.add("input-error");
 }
 
@@ -77,11 +77,42 @@ form.addEventListener("submit", function(event){
     // The validateMessage function checks if the message length is at least 20 characters and returns true or false. 
     // If it’s false, I handle the error in the submit logic.”
 
-    if(!validateMessage(message)){
-    showError(message, "Message must be at least 20 characters");
-    } else {
+    if(!isNotEmpty(message)){
+        showError(message, "Message is required");
+    }
+    else if(!validateMessage(message)){
+    showError(message, "It must be at least 20 characters");
+    }else {
         clearError(message);
     }
 
 });
 
+// I want errors to update while the user types not only when user click submit.
+
+firstName.addEventListener("input", function(){
+    if(!isNotEmpty(firstName)){
+        showError(firstName, "First name is required");
+    }else{
+        clearError(firstName);
+    }
+})
+
+lastName.addEventListener("input", function(){
+    if(!isNotEmpty(lastName)){
+        showError(lastName, "Last name is required");
+    }else{
+        clearError(lastName);
+    }
+})
+
+message.addEventListener("input", function(){
+    if(!isNotEmpty(message)){
+        showError(message, "Message is required");
+    }
+    else if(!validateMessage(message)){
+    showError(message, "It must be at least 20 characters");
+    }else {
+        clearError(message);
+    }
+})
