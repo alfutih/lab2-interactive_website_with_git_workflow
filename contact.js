@@ -47,7 +47,7 @@ function validateSubject(subject){
 }
 
 function updateMessageCounter(){
-    const currentLength = message.value.length;
+    const currentLength = message.value.trim().length;
     const minLength = 20;
 
     messageCounter.textContent = `${currentLength} / ${minLength} characters`;
@@ -191,7 +191,7 @@ firstName.addEventListener("input", function(){
     if(!isNotEmpty(firstName)){
         clearError(firstName);
     } 
-    else if (!/^[A-Za-z]+$/.test(firstName.value)) {
+    else if (!/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(firstName.value)) {
     showError(firstName, "Only letters allowed");
     } 
     else{
@@ -203,7 +203,7 @@ lastName.addEventListener("input", function(){
     if(!isNotEmpty(lastName)){
         clearError(lastName);
     }
-    else if (!/^[A-Za-z]+$/.test(lastName.value)) {
+    else if (!/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(lastName.value)) {
     showError(lastName, "Only letters allowed");
     } 
     else{
@@ -261,14 +261,20 @@ message.addEventListener("input", function(){
 
 updateMessageCounter(); // in order to initialize counter on page load
 
-form.addEventListener("reset", function(){
-    setTimeout(updateMessageCounter),0;
-    /* successMessage.textContent= "";
-    successMessage.classList.remove("show"); */
-})
+form.addEventListener("reset", function () {
+  setTimeout(function () {
+    updateMessageCounter();
 
-clear.addEventListener("click", function(){
-    setTimeout(updateMessageCounter, 0);
+    // clear success
     successMessage.textContent = "";
     successMessage.classList.remove("show");
+
+    // clear all field errors + red borders
+    clearError(firstName);
+    clearError(lastName);
+    clearError(email);
+    clearError(phone);
+    clearError(subject);
+    clearError(message);
+  }, 0);
 });
