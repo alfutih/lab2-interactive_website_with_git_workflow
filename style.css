@@ -275,6 +275,12 @@ button{
     background-color: transparent;
 }
 
+.form-note {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
 footer{
     text-align: center;
     color: #999;
@@ -508,6 +514,10 @@ button{
     padding: 7px;
 }
 
+}
+
+.form-note {
+  font-size: 0.65rem;
 }
 /* @media (max-width: 576px) {
   header {
