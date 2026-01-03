@@ -32,6 +32,12 @@ function validateEmail(emailInput) {
   return emailPattern.test(value);
 }
 
+function validatePhone(phoneInput) {
+  const value = phoneInput.value.trim();
+  const phonePattern = /^\+?[0-9]+$/;
+  return phonePattern.test(value);
+}
+
 function validateSubject(subject){
     return(subject.value !=="");
 }
@@ -90,6 +96,13 @@ form.addEventListener("submit", function(event){
         showError(email, "Please enter a valid email address");
     } else{
         clearError(email);
+    }
+
+    // Implement validation phone numbers
+    if(isNotEmpty(phone) && !validatePhone(phone)){
+        showError(phone, "Only numbers are allowed, optionally starting with +");
+    }else{
+        clearError(phone);
     }
 
     //subject validation
