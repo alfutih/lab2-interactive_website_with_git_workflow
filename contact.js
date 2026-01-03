@@ -16,6 +16,8 @@ const submit= document.querySelector(".submitButton");
 
 const clear= document.querySelector(".clearButton");
 
+const successMessage = document.getElementById("successMessage");
+
 
 //Validation functions for name, message and email.
 function isNotEmpty (input){
@@ -73,9 +75,17 @@ function clearError(input){
 
 form.addEventListener("submit", function(event){
     event.preventDefault();
+
+    //clear old success message when user submits again
+    successMessage.textContent = "";
+    successMessage.classList.remove("show");
+
+    //This helps me check if all fields are correct before showing the success message
+    let isFormValid = true;
     //Implement first name validation function
     if(!isNotEmpty(firstName)){
     showError(firstName, "First name is required");
+    isFormValid = false;
     }else{
         clearError(firstName);
     }
@@ -84,6 +94,7 @@ form.addEventListener("submit", function(event){
 
     if(!isNotEmpty(lastName)){
         showError(lastName, "Last name is required");
+    isFormValid = false;
     } else{
         clearError(lastName);
     }
@@ -92,8 +103,10 @@ form.addEventListener("submit", function(event){
 
     if(!isNotEmpty(email)){
         showError(email, "Email is required");
+    isFormValid = false;
     } else if(!validateEmail(email)){
         showError(email, "Please enter a valid email address");
+    isFormValid = false;
     } else{
         clearError(email);
     }
@@ -101,6 +114,7 @@ form.addEventListener("submit", function(event){
     // Implement validation phone numbers
     if(isNotEmpty(phone) && !validatePhone(phone)){
         showError(phone, "Only numbers are allowed, optionally starting with +");
+    isFormValid = false;
     }else{
         clearError(phone);
     }
@@ -108,6 +122,7 @@ form.addEventListener("submit", function(event){
     //subject validation
     if(!validateSubject(subject)){
         showError(subject, "Please choose a subject");
+    isFormValid = false;
     }else{
         clearError(subject);
     }
@@ -118,11 +133,35 @@ form.addEventListener("submit", function(event){
 
     if(!isNotEmpty(message)){
         showError(message, "Message is required");
+    isFormValid = false;
     }
     else if(!validateMessage(message)){
     showError(message, "It must be at least 20 characters");
+    isFormValid = false;
     }else {
         clearError(message);
+    }
+
+    // implement successful message, reset the form and clear the errors
+
+    if (isFormValid){
+        successMessage.textContent= `Thank you ${firstName.value}! I will contact you soon!`;
+        successMessage.classList.add("show");
+
+        form.reset();
+
+        clearError(firstName);
+        clearError(lastName);
+        clearError(email);
+        clearError(phone);
+        clearError(subject);
+        clearError(message);
+
+        //Hide success message after 3 seconds
+        setTimeout(function(){
+            successMessage.textContent= "";
+            successMessage.classList.remove("show");
+        }, 3000);
     }
 
 });
@@ -145,6 +184,14 @@ lastName.addEventListener("input", function(){
     }
 })
 
+phone.addEventListener("input", function(){
+    if(isNotEmpty(phone) && !validatePhone(phone)){
+        showError(phone, "Only numbers are allowed, optionally starting with +");
+    } else {
+        clearError(phone);
+    };
+})
+
 email.addEventListener("input", function(){
      if(!isNotEmpty(email)){
         showError(email, "Email is required");
@@ -155,8 +202,8 @@ email.addEventListener("input", function(){
     }
 })
 
-// According to UX consedration, that Error message should disappear 
-// when the user type on the same input and will appear only when the user leave inpot if the value is wrong.
+// According to UX consideration, that Error message should disappear 
+// when the user type on the same input and will appear only when the user leave input if the value is wrong.
 //To fix this issue I should use blur validation and touched.
 // I leave that to the future work.
 

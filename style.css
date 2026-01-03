@@ -281,6 +281,10 @@ button{
   margin-bottom: 20px;
 }
 
+.success-message{
+    color: green;
+}
+
 footer{
     text-align: center;
     color: #999;
@@ -319,6 +323,18 @@ select + .error-message {
 
 .input-error{
     border-color: #dc3545 !important;
+}
+
+.success-message {
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.success-message.show {
+  opacity: 1;
 }
 
 @media screen and (max-width: 1300px) {
