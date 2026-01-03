@@ -12,6 +12,8 @@ const subject= document.getElementById("subject");
 
 const message= document.getElementById("message");
 
+const messageCounter = document.getElementById("messageCounter");
+
 const submit= document.querySelector(".submitButton");
 
 const clear= document.querySelector(".clearButton");
@@ -42,6 +44,20 @@ function validatePhone(phoneInput) {
 
 function validateSubject(subject){
     return(subject.value !=="");
+}
+
+function updateMessageCounter(){
+    const currentLength = message.value.length;
+    const minLength = 20;
+
+    messageCounter.textContent = `${currentLength} / ${minLength} characters`;
+
+    if(currentLength>= minLength){
+        messageCounter.classList.add("valid");
+    }else{
+        messageCounter.classList.remove("valid");
+    }
+
 }
 //Create function for show error.
 
@@ -82,6 +98,8 @@ form.addEventListener("submit", function(event){
 
     //This helps me check if all fields are correct before showing the success message
     let isFormValid = true;
+
+    updateMessageCounter(); // always update counter
     //Implement first name validation function
     if(!isNotEmpty(firstName)){
     showError(firstName, "First name is required");
@@ -149,6 +167,7 @@ form.addEventListener("submit", function(event){
         successMessage.classList.add("show");
 
         form.reset();
+        updateMessageCounter();
 
         clearError(firstName);
         clearError(lastName);
@@ -218,6 +237,7 @@ subject.addEventListener("change", function(){
 })
     
 message.addEventListener("input", function(){
+    updateMessageCounter();
     if(!isNotEmpty(message)){
         showError(message, "Message is required");
     }
@@ -227,3 +247,17 @@ message.addEventListener("input", function(){
         clearError(message);
     }
 })
+
+updateMessageCounter(); // in order to initialize counter on page load
+
+form.addEventListener("reset", function(){
+    setTimeout(updateMessageCounter),0;
+    /* successMessage.textContent= "";
+    successMessage.classList.remove("show"); */
+})
+
+clear.addEventListener("click", function(){
+    setTimeout(updateMessageCounter, 0);
+    successMessage.textContent = "";
+    successMessage.classList.remove("show");
+});
