@@ -189,31 +189,41 @@ form.addEventListener("submit", function(event){
 
 firstName.addEventListener("input", function(){
     if(!isNotEmpty(firstName)){
-        showError(firstName, "First name is required");
-    }else{
+        clearError(firstName);
+    } 
+    else if (!/^[A-Za-z]+$/.test(firstName.value)) {
+    showError(firstName, "Only letters allowed");
+    } 
+    else{
         clearError(firstName);
     }
 })
 
 lastName.addEventListener("input", function(){
     if(!isNotEmpty(lastName)){
-        showError(lastName, "Last name is required");
-    }else{
+        clearError(lastName);
+    }
+    else if (!/^[A-Za-z]+$/.test(lastName.value)) {
+    showError(lastName, "Only letters allowed");
+    } 
+    else{
         clearError(lastName);
     }
 })
 
 phone.addEventListener("input", function(){
-    if(isNotEmpty(phone) && !validatePhone(phone)){
+    if(!isNotEmpty(phone)){
+        clearError(phone);
+    } else if (!validatePhone(phone)){
         showError(phone, "Only numbers are allowed, optionally starting with +");
     } else {
         clearError(phone);
-    };
-})
+    }
+});
 
 email.addEventListener("input", function(){
      if(!isNotEmpty(email)){
-        showError(email, "Email is required");
+        clearError(email);
     } else if(!validateEmail(email)){
         showError(email, "Please enter a valid email address");
     } else{
@@ -238,8 +248,9 @@ subject.addEventListener("change", function(){
     
 message.addEventListener("input", function(){
     updateMessageCounter();
+
     if(!isNotEmpty(message)){
-        showError(message, "Message is required");
+    clearError(message);
     }
     else if(!validateMessage(message)){
     showError(message, "It must be at least 20 characters");
