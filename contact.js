@@ -92,7 +92,7 @@ function clearError(input){
 form.addEventListener("submit", function(event){
     event.preventDefault();
 
-    //clear old success message when user submits again
+    // Clear old success message when user submits again
     successMessage.textContent = "";
     successMessage.classList.remove("show");
 
@@ -263,10 +263,6 @@ updateMessageCounter(); // in order to initialize counter on page load
 form.addEventListener("reset", function () {
   setTimeout(function () {
     updateMessageCounter();
-
-    /* // clear success
-    successMessage.textContent = "";
-    successMessage.classList.remove("show"); */
 
     // clear all field errors + red borders
     clearError(firstName);
