@@ -1,0 +1,63 @@
+.container1, .container2, .container3, .container4, .container5, .container6{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 90%;
+    padding-bottom: 80px;
+ }
+
+.description{
+    max-width: 50%;
+    text-align: center;
+    line-height: 25px;
+}
+.description p{
+    color: #999;
+}
+
+.project {
+    width: 500px;
+    height: 500px;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    transition: all 1s;
+} 
+
+
+.project{
+      transition: all 1s;
+}
+.project:hover{
+    transform: scale(1.04);
+}
+
+
+ #project1{
+    background-image: url(../image/playrent.png) ;
+}
+
+
+#project2{
+    background-image: url(../image/polestar_ui.gif) ;
+}
+
+#project3{
+    background-image: url(../image/touch_and_discover.png) ;
+}
+
+#project4{
+    background-image: url(../image/skraphjaltarna.png) ;
+}
+
+#project5{
+    background-image: url(../image/background.jpg) ;
+}
+
+#project6{
+    background-image: url(../image/webDesign.jpg) ;
+}

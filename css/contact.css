@@ -1,0 +1,180 @@
+
+.contact{
+text-align: center;
+padding-top: 50px;
+padding-bottom: 50px;
+align-items: center;
+margin: 0 auto;
+
+
+}
+
+.contact p{
+    color: #999;
+    line-height: 25px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Center the form */
+form {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+    color: #999;
+}
+
+.input-valid {
+  border-color: #198754;
+}
+
+/* Style inputs + textarea */
+input, textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.option_field{
+    display: block;
+    margin-bottom: 2px;
+
+}
+
+.option_field + select,
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+select.input-valid {
+  border-color: #198754;
+}
+
+#message {
+    height: 300px;
+}
+
+.char-counter {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  margin-bottom: 40px;
+  color: #dc3545; /* start red because 0 < 20 */
+}
+
+.char-counter.valid {
+  color: #198754; /* green when >= 20 */
+}
+
+button{
+    color: white;
+    background-color: rgb(238, 50, 200);
+    border-radius: 5px;
+    padding: 10px;
+}
+.clearButton{
+    color: black;
+    background-color: transparent;
+}
+
+.form-note {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+#subject {
+  color: #999;
+}
+
+#subject:valid {
+  color: black;
+}
+
+
+.error-message{
+    color: #dc3545;
+    font-size: 0.85rem;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    margin-top: -20px;
+    margin-bottom: 18px;
+
+}
+
+select + .error-message {
+  margin-top: 8px;
+}
+
+.error-message.show {
+    opacity: 1;
+    
+}
+
+.input-error{
+    border-color: #dc3545 !important;
+}
+
+.success-message {
+    color: green;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.success-message.show {
+  opacity: 1;
+}
+
+
+@media screen and (max-width: 1300px) {
+
+    form {
+    max-width: 600px;
+    margin: 0 auto;
+    }
+} 
+
+
+/* Medium devices (laptops/tablets landscape, <992px) */
+@media screen and (max-width: 992px) {
+
+    form {
+    max-width: 400px;
+    margin: 0 auto;
+    } 
+
+} 
+/* Medium devices (576px) */
+@media screen and (max-width: 576px) {
+
+    form {
+        max-width: 300px;
+        margin: 0 auto;
+        }
+
+    form{
+            font-size: 0.8rem;
+        }
+
+    .contact{
+        
+        padding-top: 35px;
+        padding-bottom: 35px;
+        }
+
+    .form-note {
+    font-size: 0.65rem;
+    }
+
+    button{
+        padding: 7px;
+    }
+
+}

@@ -1,0 +1,302 @@
+* {
+font-family: "Inter", sans-serif;
+}
+
+
+header{
+    padding: 20px;
+}
+nav ul {
+    list-style: none;
+    font-size: 18px;
+    gap: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: rgb(238, 50, 200);
+}
+
+.my_photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: rgb(238, 50, 200);
+    line-height: 50px;
+    
+    margin: 0 auto;
+    max-width: 90%;
+    
+    
+
+}
+.image_small{
+    display: none;
+    max-width: 90%;
+    margin-bottom: 2em;
+}
+
+.image_big{
+    max-width: 70%;
+    margin-bottom: 3em;
+    
+
+}
+
+
+.under_welcome_text{
+color: #999;
+line-height: 25px;
+margin: 0 auto;
+max-width: 90%;
+text-align: center;
+padding-bottom: 3em;
+
+
+}
+
+h1, h2{
+
+    text-align: center;
+
+
+   
+}
+
+h1{
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+}
+
+h2{
+    font-size: 2rem;
+    line-height: 4rem;
+}
+
+h3{
+    color: #999;
+}
+.skills{
+
+   line-height: 25px;
+    margin: 0 auto;
+    padding-bottom: 3em;
+    max-width: 90%;
+    place-items: center;
+    
+}
+
+.skills ul {
+  max-width: 90%;
+  margin: 0 auto;     /* center horizontally */
+  padding-left: 0;    /* remove default ul indent */
+}
+
+.skills li{
+    margin-bottom: 15px;
+    color: #999;
+    text-align: left;
+}
+
+.skills li strong {
+  color: black;
+}
+
+.education{
+    margin-bottom: 3em;
+    
+    
+}
+.education table {
+
+  border: 1px solid black;
+  border-collapse: collapse;
+    max-width: 90%;
+    margin: 0 auto;
+    
+}
+
+
+.education th,
+.education td {
+  border: 1px solid black;
+  padding: 20px;
+  line-height: 25px;
+  text-align: left;
+  color: #999;
+  vertical-align: top;
+}
+
+.hobbies{
+    list-style: none;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.hobbies li{
+    color: #999;
+}
+.social_media_continer{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center; /* center items horizontily أفقيًاinside a flex container */
+    align-items: center; /*center items vertically عموديًا inside a flex container */
+    gap: 20px;
+}
+
+footer{
+    text-align: center;
+    color: #999;
+}
+
+
+hr{
+    border-color: pink;
+    border-width: 3px;
+    max-width: 200px;
+}
+
+main{
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .image_big{
+        display: flex;
+        margin: 0 auto;
+        width: 50%;
+    }
+  
+    .my_photo {
+        display: flex;    
+        text-align: center;
+        margin-bottom: 30px;
+
+        
+        }
+
+    .image_small{
+        display: none;
+
+    }
+    
+    .Welcome{
+        margin: 20px auto;
+        font-size: 2rem;
+        line-height: 3rem;
+
+
+    }
+
+    h2{
+        font-size: 1.8rem;
+        line-height: 4rem;
+    }
+
+} 
+
+
+/* Medium devices (laptops/tablets landscape, <992px) */
+@media screen and (max-width: 992px) {
+
+    .image_big{
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+    }
+  
+    .my_photo {
+        display: block;    
+        text-align: center;
+
+        
+        }
+
+    .image_small{
+        display: none;
+
+    }
+    
+    .Welcome{
+        margin: 20px auto;
+        font-size: 2rem;
+        width: 90%;
+
+
+    }
+
+    h1{
+    font-size: 1.8rem;
+    line-height: 3rem;
+    }
+
+    h2{
+    font-size: 1.6rem;
+    line-height: 4rem;
+    }
+ 
+
+} 
+/* Medium devices (576px) */
+@media screen and (max-width: 576px) {
+
+    .image_big{
+        display: none;
+    }
+  
+    .my_photo {
+        display: block;    
+        text-align: center;
+
+        
+        }
+
+    .image_small{
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+
+    }
+    
+    .Welcome{
+        margin: 20px auto;
+        font-size: 1.2rem;
+        width: 90%;
+        line-height: 1.9rem;
+    }
+    
+    h1{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    }
+
+    h2{
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+    }
+    .under_welcome_text,
+    .skills, .education, .hobbies, h3, h4, footer, nav ul, p{
+        font-size: 0.8rem;
+    }
+
+    .skills ul {
+    max-width: 95%;
+    }
+
+}
