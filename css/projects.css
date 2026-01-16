@@ -61,3 +61,8 @@
 #project6{
     background-image: url(../image/webDesign.jpg) ;
 }
+
+.filter-btn.active {
+  background-color: rgb(238, 50, 200);
+  color: white;
+}

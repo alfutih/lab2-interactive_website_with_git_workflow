@@ -65,30 +65,104 @@ const projects = [
 ];
 
 
+// create a set of categories
+//A Set is like a list that doesn’t allow duplicates.
+const categorySet = new Set();
+
+
+// Fill the Set using a loop. That is mean for each project: take project.category, put it into the set
+// and duplicates are automatically ignored.
+projects.forEach(function (project) {
+  categorySet.add(project.category);
+});
+
+// Convert the Set back into. an array
+const categories = Array.from(categorySet);
+
+//Add "All Projects" at the begining
+categories.unshift("All Projects");
+
 // get the container where projects will be shown
 const projectsContainer = document.getElementById("projects_container");
 
-// clear old content so projects are not duplicated
-projectsContainer.innerHTML = "";
 
-// loop through all projects and show them
-projects.forEach(function (project) {
+// get the conter element from html
+const projectsCounter = document.getElementById("projectsCounter");
 
-  // create a container for one project
-  const card = document.createElement("div");
+// create cards for the projects and each card includes a title and description
+function renderProjects(list) {
+  projectsContainer.innerHTML = "";
+  //Update the counter inside renderProjects(list)
+  projectsCounter.textContent = `Showing ${list.length} of ${projects.length} projects`;
+  list.forEach(function (project) {
+    const card = document.createElement("div");
 
-  // create title
-  const title = document.createElement("h2");
-  title.textContent = project.title;
+    const title = document.createElement("h2");
+    title.textContent = project.title;
 
-  // create description
-  const description = document.createElement("p");
-  description.textContent = project.description;
+    const description = document.createElement("p");
+    description.textContent = project.description;
 
-  // put title and description inside the card
-  card.appendChild(title);
-  card.appendChild(description);
+    card.appendChild(title);
+    card.appendChild(description);
 
-  // put the card inside the page
-  projectsContainer.appendChild(card);
+    projectsContainer.appendChild(card);
+  });
+}
+
+// Show all projects once
+renderProjects(projects);
+
+
+
+
+// Select the filter bar ID in html file
+const filterBar = document.getElementById("filterBar");
+
+// clear filter bar so buttons are not duplicated
+filterBar.innerHTML = "";
+
+// create a button for each category
+categories.forEach(function (category) {
+  const btn = document.createElement("button");
+
+  // show the category name on the button
+  btn.textContent = category;
+
+  // store the category name inside the button
+  btn.dataset.category = category;
+
+  //Add a class to every button
+  btn.classList.add("filter-btn");
+
+  //Make "All Projects" active by default
+  if (category === "All Projects") {
+    btn.classList.add("active");
+  }
+
+  // when user clicks the button
+  btn.addEventListener("click", function () {
+    const selectedCategory = btn.dataset.category;
+
+    // On click : remove active from all, then add to clicked
+    document.querySelectorAll(".filter-btn").forEach(function (button) {
+    button.classList.remove("active");
+    });
+    btn.classList.add("active");
+    // if user chooses All Projects, show everything
+    if (selectedCategory === "All Projects") {
+      renderProjects(projects);
+    } 
+    // otherwise, show only projects that match the category
+    else {
+      const filteredProjects = projects.filter(function (project) {
+        return project.category === selectedCategory;
+      });
+
+      renderProjects(filteredProjects);
+    }
+  });
+
+  // add the button to the filter bar
+  filterBar.appendChild(btn);
 });
