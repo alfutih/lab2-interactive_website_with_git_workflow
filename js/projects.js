@@ -91,24 +91,45 @@ const projectsCounter = document.getElementById("projectsCounter");
 
 // create cards for the projects and each card includes a title and description
 function renderProjects(list) {
+  // clear old projects before showing new ones
   projectsContainer.innerHTML = "";
-  //Update the counter inside renderProjects(list)
+
+  // update the counter text
   projectsCounter.textContent = `Showing ${list.length} of ${projects.length} projects`;
+
+  // loop through the projects list
   list.forEach(function (project) {
+    // create a card for one project
     const card = document.createElement("div");
 
+    //creat  class for the the card
+    card.classList.add("project-card");
+
+    // create an image box for the project
+    const imageBox = document.createElement("div");
+    imageBox.style.backgroundImage = `url("${project.image}")`;
+    // creat class for the image
+    imageBox.classList.add("project-image");
+
+    // create project title
     const title = document.createElement("h2");
     title.textContent = project.title;
 
+    // create project description
     const description = document.createElement("p");
     description.textContent = project.description;
 
+    // put image, title and description inside the card
+    card.appendChild(imageBox);
     card.appendChild(title);
     card.appendChild(description);
 
+    // add the card to the page
     projectsContainer.appendChild(card);
   });
 }
+
+
 
 // Show all projects once
 renderProjects(projects);
