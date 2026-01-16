@@ -112,7 +112,7 @@ function renderProjects(list) {
     imageBox.classList.add("project-image");
 
     // create project title
-    const title = document.createElement("h2");
+    const title = document.createElement("h3");
     title.textContent = project.title;
 
     // show project category
