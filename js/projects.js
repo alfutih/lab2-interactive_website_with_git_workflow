@@ -115,6 +115,11 @@ function renderProjects(list) {
     const title = document.createElement("h2");
     title.textContent = project.title;
 
+    // show project category
+    const categoryText = document.createElement("p");
+    categoryText.textContent = project.category;
+    categoryText.classList.add("project-category");
+
     // create project description
     const description = document.createElement("p");
     description.textContent = project.description;
@@ -129,6 +134,7 @@ function renderProjects(list) {
     // put image, title and description inside the card
     card.appendChild(imageBox);
     card.appendChild(title);
+    card.appendChild(categoryText);
     card.appendChild(description);
     card.appendChild(link);
 
