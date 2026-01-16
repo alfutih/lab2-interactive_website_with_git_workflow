@@ -10,7 +10,7 @@ const projects = [
     category: "UX/UI",
     technologies: ["Figma", "UI Design"],
     image: "image/playrent.png",
-    link: "#"
+    link: "https://tarekdesign.se/playrent"
   },
 /* An Honest Interfaces */
   {
@@ -20,7 +20,7 @@ const projects = [
     category: "Critical Design",
     technologies: ["Critical Design", "Illustration"],
     image: "image/polestar_ui.gif",
-    link: "#"
+    link: "https://tarekdesign.se/an-honest-interface"
   },
   /* Touch & Discover */
   {
@@ -30,7 +30,7 @@ const projects = [
   category: "UX/UI",
   technologies: ["Interaction Design", "UI"],
   image: "image/touch_and_discover.png",
-  link: "#"
+  link: "https://tarekdesign.se/touch-and-discover"
 },
 /* Skräphjältarna */
 {
@@ -40,7 +40,7 @@ const projects = [
   category: "Illustration",
   technologies: ["Illustration", "Book Design"],
   image: "image/skraphjaltarna.png",
-  link: "#"
+  link: "https://tarekalfutih.se/skraphjaltarna"
 },
 /* Game Background */
 {
@@ -50,7 +50,7 @@ const projects = [
   category: "Illustration",
   technologies: ["Photoshop", "Digital Painting"],
   image: "image/background.jpg",
-  link: "#"
+  link: "https://tarekalfutih.se/backgrounds"
 },
 /* Portfolio */
 {
@@ -60,7 +60,7 @@ const projects = [
   category: "Web Development",
   technologies: ["HTML", "CSS", "JavaScript"],
   image: "image/webDesign.jpg",
-  link: "#"
+  link: "https://tarekdesign.se"
 }
 ];
 
