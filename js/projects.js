@@ -64,6 +64,31 @@ const projects = [
 }
 ];
 
-// just to check that the data works
-console.log(projects);
-console.log(projects.length);
+
+// get the container where projects will be shown
+const projectsContainer = document.getElementById("projects_container");
+
+// clear old content so projects are not duplicated
+projectsContainer.innerHTML = "";
+
+// loop through all projects and show them
+projects.forEach(function (project) {
+
+  // create a container for one project
+  const card = document.createElement("div");
+
+  // create title
+  const title = document.createElement("h2");
+  title.textContent = project.title;
+
+  // create description
+  const description = document.createElement("p");
+  description.textContent = project.description;
+
+  // put title and description inside the card
+  card.appendChild(title);
+  card.appendChild(description);
+
+  // put the card inside the page
+  projectsContainer.appendChild(card);
+});
