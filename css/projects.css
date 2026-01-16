@@ -1,4 +1,4 @@
-.container1, .container2, .container3, .container4, .container5, .container6{
+/* .container1, .container2, .container3, .container4, .container5, .container6{
     display: flex;
     gap: 20px;
     align-items: center;
@@ -65,4 +65,97 @@
 .filter-btn.active {
   background-color: rgb(238, 50, 200);
   color: white;
+} */
+
+
+
+/* ===== Grade 4 Projects Styling ===== */
+
+/* filter buttons area */
+.filter-bar {
+  max-width: 90%;
+  margin: 20px auto;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* filter buttons */
+.filter-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-btn.active {
+  background-color: rgb(238, 50, 200);
+  color: white;
+  border-color: rgb(238, 50, 200);
+}
+
+/* counter text */
+.projects-counter {
+  max-width: 90%;
+  margin: 0 auto 20px;
+  text-align: center;
+  color: #999;
+}
+
+/* container for all project cards */
+.projects_container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding-bottom: 80px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* one project card */
+.project-card {
+  width: 45%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+/* image on top */
+.project-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* title */
+.project-card h2 {
+  padding: 16px 16px 8px;
+  margin: 0;
+}
+
+/* description */
+.project-card p {
+  padding: 0 16px 16px;
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* responsive: one column on smaller screens */
+@media screen and (max-width: 900px) {
+  .project-card {
+    width: 100%;
+  }
 }
