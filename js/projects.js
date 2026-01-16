@@ -119,10 +119,18 @@ function renderProjects(list) {
     const description = document.createElement("p");
     description.textContent = project.description;
 
+    // create link to the project
+    const link = document.createElement("a");
+    link.textContent = "View project";
+    link.href = project.link;
+    link.target = "_blank";
+    link.classList.add("project-link");
+
     // put image, title and description inside the card
     card.appendChild(imageBox);
     card.appendChild(title);
     card.appendChild(description);
+    card.appendChild(link);
 
     // add the card to the page
     projectsContainer.appendChild(card);

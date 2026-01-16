@@ -61,11 +61,7 @@
 #project6{
     background-image: url(../image/webDesign.jpg) ;
 }
-
-.filter-btn.active {
-  background-color: rgb(238, 50, 200);
-  color: white;
-} */
+ */
 
 
 
@@ -125,6 +121,9 @@
   background: white;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s;
+  
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -147,15 +146,42 @@
 
 /* description */
 .project-card p {
+/* padding-top: 0;, padding-right: 16px;, padding-bottom: 16px;, padding-left: 16px; */
   padding: 0 16px 16px;
   margin: 0;
   color: #666;
+  /* Each line will be 1.5 × the font size */
   line-height: 1.5;
 }
 
-/* responsive: one column on smaller screens */
+/* view projects link */
+.project-link {
+  display: block;
+  text-decoration: none;
+  font-weight: 600;
+  color: rgb(238, 50, 200);
+  padding: 0 16px 16px;
+  margin-top: auto;
+}
+
+
 @media screen and (max-width: 900px) {
   .project-card {
     width: 100%;
   }
 }
+
+/* Medium devices (576px) */
+@media screen and (max-width: 576px) {
+
+
+    .project-link, .project-card p {
+    font-size: 0.65rem;
+    }
+
+    .filter-btn{
+        padding: 6px 10px;
+    }
+
+}
+
