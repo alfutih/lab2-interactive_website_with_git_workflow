@@ -114,6 +114,8 @@ function renderProjects(list) {
     // create project title
     const title = document.createElement("h3");
     title.textContent = project.title;
+    title.classList.add("title");
+    
 
     // show project category
     const categoryText = document.createElement("p");
