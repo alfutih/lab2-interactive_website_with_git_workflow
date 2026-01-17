@@ -115,7 +115,7 @@
 
 /* one project card */
 .project-card {
-  width: 45%;
+  width: 20%;
   border-radius: 20px;
   overflow: hidden;
   background: white;
@@ -132,7 +132,7 @@
 
 /* image on top */
 .project-image {
-  height: 220px;
+  height: 400px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -173,16 +173,49 @@
   margin-top: auto;
 }
 
+@media screen and (max-width: 1300px) {
+
+  .project-card {
+    width: 35%;
+    
+  }
+
+  .project-image {
+  height: 250px;
+
+}
+} 
 
 @media screen and (max-width: 900px) {
   .project-card {
-    width: 100%;
+    width: 40%;
   }
+
+  .project-image {
+  height: 200px;
+}
+
+  .project-link, .project-card p {
+    font-size: 0.80rem;
+    }
 }
 
 /* Medium devices (576px) */
 @media screen and (max-width: 576px) {
 
+      .main_page_title{
+         font-size: 1.2rem;
+      }
+
+      .filter-btn {
+      padding: 8px 14px;
+      font-weight: 600;
+      font-size: 0.60rem;
+    }
+
+    .filter-bar {
+      gap: 8px;
+    }
 
     .project-link, .project-card p {
     font-size: 0.65rem;
@@ -191,6 +224,14 @@
     .filter-btn{
         padding: 6px 10px;
     }
+
+      .project-card {
+    width: 80%;
+    }
+
+    .project-image {
+    height: 200px;
+  }
 
 }
 

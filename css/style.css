@@ -55,6 +55,10 @@ nav a:hover {
 
 }
 
+.Welcome{
+    font-size: 3rem;
+    line-height: 4.5rem;
+} 
 
 .under_welcome_text{
 color: #999;
