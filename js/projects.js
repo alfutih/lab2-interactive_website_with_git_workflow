@@ -148,7 +148,8 @@ function renderProjects(list) {
 
 
 // Show all projects once
-renderProjects(projects);
+// I added slice (0,4) here to show first 4 project cards from the array list.
+renderProjects(projects.slice(0,4));
 
 
 
@@ -188,7 +189,8 @@ categories.forEach(function (category) {
     btn.classList.add("active");
     // if user chooses All Projects, show everything
     if (selectedCategory === "All Projects") {
-      renderProjects(projects);
+      // I added slice (0,4) here also to show first 4 project cards from the array list when user click all project again.
+      renderProjects(projects.slice(0,4));
     } 
     // otherwise, show only projects that match the category
     else {

@@ -27,7 +27,7 @@ function validateName(nameInput){
 }
 
 function validateMessage(message){
-    return message.value.trim().length >= 20;
+    return message.value.trim().length > 20 && message.value.trim().length <=40;
 }
 
 function validateEmail(emailInput) {
@@ -48,11 +48,12 @@ function validateSubject(subject){
 
 function updateMessageCounter(){
     const currentLength = message.value.trim().length;
-    const minLength = 20;
+    const minLength = 21;
+    const maxLength = 40;
 
-    messageCounter.textContent = `${currentLength} / ${minLength} characters`;
+    messageCounter.textContent = `${currentLength} / ${maxLength} characters`;
 
-    if(currentLength>= minLength){
+    if(currentLength>= minLength && currentLength<=maxLength){
         messageCounter.classList.add("valid");
     }else{
         messageCounter.classList.remove("valid");
@@ -174,7 +175,7 @@ form.addEventListener("submit", function(event){
     isFormValid = false;
     }
     else if(!validateMessage(message)){
-    showError(message, "It must be at least 20 characters");
+    showError(message, "Message must be between 21 and 40 characters");
     isFormValid = false;
     }else {
         clearError(message);
@@ -271,7 +272,7 @@ message.addEventListener("input", function(){
     clearError(message);
     }
     else if(!validateMessage(message)){
-    showError(message, "It must be at least 20 characters");
+    showError(message, "Message must be between 21 and 40 characters");
     }else {
         clearError(message);
     }
