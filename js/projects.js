@@ -147,9 +147,11 @@ function renderProjects(list) {
 
 
 
-// Show all projects once
 // I added slice (0,4) here to show first 4 project cards from the array list.
-renderProjects(projects.slice(0,4));
+//renderProjects(projects.slice(0,4));
+
+// Show all projects once
+renderProjects(projects);
 
 
 
